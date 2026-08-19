@@ -24,17 +24,16 @@ teams, tags, attachments, custom fields, goals, and portfolios from the shell.
 
 ## Install
 
-Requires Go 1.22.2 or newer:
-
-```bash
-go install github.com/vincentsch/asana-cli/cmd/asana@latest
-```
-
-When GitHub release assets are available, macOS and Linux users can install the
-latest checksummed binary with:
+macOS and Linux users can install the latest checksummed release binary with:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/vincentsch/asana-cli/main/install.sh | bash
+```
+
+Or build the current release with Go 1.22.2 or newer:
+
+```bash
+go install github.com/vincentsch/asana-cli/cmd/asana@v0.1.2
 ```
 
 Release binaries are named `asana-<os>-<arch>` and are published for Linux,

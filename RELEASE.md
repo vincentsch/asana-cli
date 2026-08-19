@@ -5,7 +5,8 @@ Use this checklist before publishing a public source release.
 ## Prepare
 
 1. Update public-facing files when needed: `README.md`, `manual/`,
-   `SECURITY.md`, `CONTRIBUTING.md`, and this checklist.
+   `SECURITY.md`, `CONTRIBUTING.md`, and this checklist. Keep release-version
+   install commands pinned to the tag being published.
 2. Confirm `go.mod` uses a public tagged `rungrad` version.
 3. Run:
 
