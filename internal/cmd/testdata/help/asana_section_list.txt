@@ -1,0 +1,43 @@
+List all sections in a project.
+
+Sections are shown in their project order. Use --json for structured output.
+
+Related commands:
+  section view
+  section create
+  task list
+
+Output modes:
+  human, json, plain, jq, template
+
+Usage:
+  asana section list [flags]
+
+Examples:
+asana section list -p "My Project"
+asana section list -p "My Project" --limit 5
+asana section list -p "My Project" --json
+asana section list -p "My Project"
+asana task list -p "My Project" -s "In Progress"
+
+Flags:
+  -h, --help                   help for list
+      --limit int              Limit number of sections in output
+  -p, --project string         Project name
+      --project-gid string     Project GID
+  -w, --workspace string       Workspace name (scopes project lookup)
+      --workspace-gid string   Workspace GID (scopes project lookup)
+
+Global Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)

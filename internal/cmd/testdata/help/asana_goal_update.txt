@@ -1,0 +1,41 @@
+Update a goal's name, status, dates, or notes.
+
+Status values: green, yellow, red, on_track, at_risk, off_track.
+
+Related commands:
+  goal view
+  goal metric set
+
+Output modes:
+  human, json, plain, jq, template
+
+Usage:
+  asana goal update <goal-gid> [flags]
+
+Examples:
+asana goal update 1234567890123456 --status on_track
+asana goal update 1234567890123456 --name "New Goal Name" --notes "Updated description"
+asana goal update 1234567890123456 --due-on 2025-01-31
+asana goal update 1234567890123456 --status at_risk --dry-run
+
+Flags:
+      --due-on string     Due date (YYYY-MM-DD)
+  -h, --help              help for update
+      --name string       New goal name
+      --notes string      Goal notes
+      --start-on string   Start date (YYYY-MM-DD)
+      --status string     Goal status (green, yellow, red, on_track, at_risk, off_track)
+
+Global Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)

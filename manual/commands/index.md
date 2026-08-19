@@ -1,0 +1,139 @@
+# asana command reference
+
+CLI for Asana
+
+## Commands
+
+- [asana attachment](attachment.md#asana-attachment) - Manage task attachments
+- [asana attachment delete](attachment.md#asana-attachment-delete) - Delete an attachment
+- [asana attachment list](attachment.md#asana-attachment-list) - List attachments on a task
+- [asana attachment upload](attachment.md#asana-attachment-upload) - Upload file or URL attachment to task
+- [asana attachment view](attachment.md#asana-attachment-view) - View attachment details
+- [asana auth](auth.md#asana-auth) - Manage authentication
+- [asana auth login](auth.md#asana-auth-login) - Log in to Asana
+- [asana completion](completion.md#asana-completion) - Generate shell completion script
+- [asana config](config.md#asana-config) - Manage configuration
+- [asana config get](config.md#asana-config-get) - Get a config value
+- [asana config list](config.md#asana-config-list) - List config values
+- [asana config set](config.md#asana-config-set) - Set a config value
+- [asana custom-field](custom-field.md#asana-custom-field) - Manage custom fields
+- [asana custom-field create](custom-field.md#asana-custom-field-create) - Create a custom field
+- [asana custom-field delete](custom-field.md#asana-custom-field-delete) - Delete a custom field
+- [asana custom-field list](custom-field.md#asana-custom-field-list) - List custom fields in a workspace
+- [asana custom-field update](custom-field.md#asana-custom-field-update) - Update a custom field
+- [asana custom-field view](custom-field.md#asana-custom-field-view) - View custom field details
+- [asana goal](goal.md#asana-goal) - Manage goals
+- [asana goal create](goal.md#asana-goal-create) - Create a goal
+- [asana goal delete](goal.md#asana-goal-delete) - Delete a goal
+- [asana goal list](goal.md#asana-goal-list) - List goals
+- [asana goal metric](goal.md#asana-goal-metric) - Manage goal metrics
+- [asana goal metric set](goal.md#asana-goal-metric-set) - Set or update goal metric
+- [asana goal update](goal.md#asana-goal-update) - Update a goal
+- [asana goal view](goal.md#asana-goal-view) - View goal details
+- [asana login](login.md#asana-login) - Log in to Asana (shortcut for 'auth login')
+- [asana portfolio](portfolio.md#asana-portfolio) - Manage portfolios
+- [asana portfolio create](portfolio.md#asana-portfolio-create) - Create a portfolio
+- [asana portfolio delete](portfolio.md#asana-portfolio-delete) - Delete a portfolio
+- [asana portfolio list](portfolio.md#asana-portfolio-list) - List portfolios
+- [asana portfolio project](portfolio.md#asana-portfolio-project) - Manage portfolio projects
+- [asana portfolio project add](portfolio.md#asana-portfolio-project-add) - Add project to portfolio
+- [asana portfolio project list](portfolio.md#asana-portfolio-project-list) - List projects in portfolio
+- [asana portfolio project remove](portfolio.md#asana-portfolio-project-remove) - Remove project from portfolio
+- [asana portfolio view](portfolio.md#asana-portfolio-view) - View portfolio details
+- [asana project](project.md#asana-project) - Manage projects
+- [asana project create](project.md#asana-project-create) - Create a new project
+- [asana project delete](project.md#asana-project-delete) - Delete a project
+- [asana project duplicate](project.md#asana-project-duplicate) - Duplicate a project
+- [asana project list](project.md#asana-project-list) - List projects in a workspace
+- [asana project member](project.md#asana-project-member) - Manage project members
+- [asana project member add](project.md#asana-project-member-add) - Add members to a project
+- [asana project member list](project.md#asana-project-member-list) - List project members
+- [asana project member remove](project.md#asana-project-member-remove) - Remove members from a project
+- [asana project update](project.md#asana-project-update) - Update a project
+- [asana project view](project.md#asana-project-view) - View project details
+- [asana section](section.md#asana-section) - Manage sections
+- [asana section create](section.md#asana-section-create) - Create a new section
+- [asana section delete](section.md#asana-section-delete) - Delete a section
+- [asana section list](section.md#asana-section-list) - List sections in a project
+- [asana section move](section.md#asana-section-move) - Move a section within a project
+- [asana section update](section.md#asana-section-update) - Update a section
+- [asana section view](section.md#asana-section-view) - View section details
+- [asana tag](tag.md#asana-tag) - Manage tags
+- [asana tag create](tag.md#asana-tag-create) - Create a new tag
+- [asana tag delete](tag.md#asana-tag-delete) - Delete a tag
+- [asana tag list](tag.md#asana-tag-list) - List tags in a workspace
+- [asana tag tasks](tag.md#asana-tag-tasks) - List tasks with this tag
+- [asana tag update](tag.md#asana-tag-update) - Update a tag
+- [asana tag view](tag.md#asana-tag-view) - View tag details
+- [asana task](task.md#asana-task) - Manage tasks
+- [asana task comment](task.md#asana-task-comment) - Manage task comments
+- [asana task comment delete](task.md#asana-task-comment-delete) - Delete a story/comment
+- [asana task comment update](task.md#asana-task-comment-update) - Update a story/comment
+- [asana task create](task.md#asana-task-create) - Create a new task
+- [asana task delete](task.md#asana-task-delete) - Delete a task
+- [asana task dependency](task.md#asana-task-dependency) - Manage task dependencies (tasks this task depends on)
+- [asana task dependency add](task.md#asana-task-dependency-add) - Add dependencies to a task
+- [asana task dependency list](task.md#asana-task-dependency-list) - List dependencies of a task
+- [asana task dependency remove](task.md#asana-task-dependency-remove) - Remove dependencies from a task
+- [asana task dependent](task.md#asana-task-dependent) - Manage task dependents (tasks that depend on this task)
+- [asana task dependent add](task.md#asana-task-dependent-add) - Add dependents to a task
+- [asana task dependent list](task.md#asana-task-dependent-list) - List dependents of a task
+- [asana task dependent remove](task.md#asana-task-dependent-remove) - Remove dependents from a task
+- [asana task done](task.md#asana-task-done) - Mark task as complete
+- [asana task duplicate](task.md#asana-task-duplicate) - Duplicate a task
+- [asana task follower](task.md#asana-task-follower) - Manage task followers
+- [asana task follower add](task.md#asana-task-follower-add) - Add followers to task
+- [asana task follower remove](task.md#asana-task-follower-remove) - Remove followers from task
+- [asana task list](task.md#asana-task-list) - List tasks in a project or section
+- [asana task move](task.md#asana-task-move) - Move task to a section
+- [asana task parent](task.md#asana-task-parent) - Manage task parent
+- [asana task parent set](task.md#asana-task-parent-set) - Set or change task parent
+- [asana task project](task.md#asana-task-project) - Manage task project membership
+- [asana task project add](task.md#asana-task-project-add) - Add task to a project
+- [asana task project remove](task.md#asana-task-project-remove) - Remove task from a project
+- [asana task reopen](task.md#asana-task-reopen) - Mark task as incomplete
+- [asana task search](task.md#asana-task-search) - Search tasks in a workspace (premium feature)
+- [asana task subtask](task.md#asana-task-subtask) - Manage subtasks
+- [asana task subtask create](task.md#asana-task-subtask-create) - Create a subtask
+- [asana task subtask list](task.md#asana-task-subtask-list) - List subtasks of a task
+- [asana task tag](task.md#asana-task-tag) - Manage task tags
+- [asana task tag add](task.md#asana-task-tag-add) - Add tag to task
+- [asana task tag remove](task.md#asana-task-tag-remove) - Remove tag from task
+- [asana task update](task.md#asana-task-update) - Update task fields
+- [asana task view](task.md#asana-task-view) - View task details
+- [asana team](team.md#asana-team) - Manage teams
+- [asana team create](team.md#asana-team-create) - Create a new team
+- [asana team list](team.md#asana-team-list) - List teams in an organization
+- [asana team member](team.md#asana-team-member) - Manage team members
+- [asana team member add](team.md#asana-team-member-add) - Add member to team
+- [asana team member list](team.md#asana-team-member-list) - List team members
+- [asana team member remove](team.md#asana-team-member-remove) - Remove member from team
+- [asana team view](team.md#asana-team-view) - View team details
+- [asana update](update.md#asana-update) - Update asana-cli to the latest version
+- [asana user](user.md#asana-user) - Manage users
+- [asana user list](user.md#asana-user-list) - List users in a workspace
+- [asana user me](user.md#asana-user-me) - Show current authenticated user
+- [asana user view](user.md#asana-user-view) - View user details
+- [asana version](version.md#asana-version) - Print version information
+- [asana workspace](workspace.md#asana-workspace) - Manage workspaces
+- [asana workspace list](workspace.md#asana-workspace-list) - List workspaces
+- [asana workspace user](workspace.md#asana-workspace-user) - Manage workspace users
+- [asana workspace user add](workspace.md#asana-workspace-user-add) - Add a user to a workspace
+- [asana workspace user list](workspace.md#asana-workspace-user-list) - List users in a workspace
+- [asana workspace user remove](workspace.md#asana-workspace-user-remove) - Remove a user from a workspace
+- [asana workspace view](workspace.md#asana-workspace-view) - View workspace details
+
+## Global flags
+
+- `--config` Path to the config file
+- `--dry-run` Preview changes without performing them
+- `--include-meta` Wrap machine output as {data, meta} (commands that expose request metadata)
+- `--jq` Transform stable JSON output with a jq expression (commands with machine output)
+- `--json` Output stable JSON instead of the human view
+- `--no-ansi` Disable all ANSI/control sequences in human output
+- `--no-color` Disable color in human output
+- `--no-pager` Never use a pager for long human output
+- `--no-prompt` Never block on an interactive prompt
+- `--plain` Print unstyled, copy-safe text (commands with human output)
+- `--quiet` Suppress non-essential output
+- `--template` Render stable JSON output through a Go text/template (commands with machine output)

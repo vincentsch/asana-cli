@@ -1,0 +1,52 @@
+Create a new task in a project.
+
+The task is placed in the first section of the project by default. Use --section
+to place it in a specific section. Optionally assign the task and set a due date.
+
+Due dates can be specified as YYYY-MM-DD for date-only or RFC3339 format
+(e.g., 2024-12-31T17:00:00Z) for datetime with timezone.
+
+Related commands:
+  task list
+  task view
+  task update
+  section list
+
+Output modes:
+  human, json, plain, jq, template
+
+Usage:
+  asana task create <title> [flags]
+
+Examples:
+asana task create "Fix login bug" -p "My Project"
+asana task create "Review PR" -p "Sprint" --assignee me --due 2024-12-31
+asana task create "New feature" -p "My Project" -s "To Do"
+asana task create "Test task" -p "My Project" --dry-run
+asana task create "Urgent fix" -p "Sprint" --json | jq -r '.task.gid'
+asana task view <gid-from-above>
+
+Flags:
+      --assignee string        Assignee (me or GID)
+      --due string             Due date (YYYY-MM-DD or RFC3339 with timezone)
+  -h, --help                   help for create
+  -p, --project string         Project name
+      --project-gid string     Project GID
+  -s, --section string         Section name
+      --section-gid string     Section GID
+  -w, --workspace string       Workspace name (scopes project lookup)
+      --workspace-gid string   Workspace GID (scopes project lookup)
+
+Global Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)
