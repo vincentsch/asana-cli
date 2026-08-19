@@ -7,6 +7,14 @@ set -euo pipefail
 REPO="vincentsch/asana-cli"
 INSTALL_DIR="${INSTALL_DIR:-/usr/local/bin}"
 BINARY_NAME="asana"
+TMP_DIR=""
+
+cleanup() {
+    if [ -n "$TMP_DIR" ]; then
+        rm -rf "$TMP_DIR"
+    fi
+}
+trap cleanup EXIT
 
 # Detect OS and architecture
 detect_platform() {
@@ -40,7 +48,7 @@ get_latest_version() {
 main() {
     echo "Installing Asana CLI..."
 
-    local platform version asset_name url checksums_url binary_path tmp_dir tmp_file checksums_file
+    local platform version asset_name url checksums_url binary_path tmp_file checksums_file
 
     platform=$(detect_platform)
     echo "Detected platform: $platform"
@@ -65,10 +73,9 @@ main() {
 
     echo "Downloading from: $url"
 
-    tmp_dir=$(mktemp -d)
-    tmp_file="${tmp_dir}/${asset_name}"
-    checksums_file="${tmp_dir}/checksums.txt"
-    trap 'rm -rf "$tmp_dir"' EXIT
+    TMP_DIR=$(mktemp -d)
+    tmp_file="${TMP_DIR}/${asset_name}"
+    checksums_file="${TMP_DIR}/checksums.txt"
 
     if ! curl -fsSL "$url" -o "$tmp_file"; then
         echo "Download failed" >&2
