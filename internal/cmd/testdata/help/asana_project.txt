@@ -1,0 +1,40 @@
+Manage Asana projects.
+
+Projects are containers for tasks, typically representing a goal, initiative, or
+ongoing work. They can have sections for organizing tasks into columns or phases.
+
+Related commands:
+  task
+  section
+  workspace
+
+Usage:
+  asana project [command]
+
+Available Commands:
+  create      Create a new project
+  delete      Delete a project
+  duplicate   Duplicate a project
+  list        List projects in a workspace
+  member      Manage project members
+  update      Update a project
+  view        View project details
+
+Flags:
+  -h, --help   help for project
+
+Global Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)
+
+Use "asana project [command] --help" for more information about a command.

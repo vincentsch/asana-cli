@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Check formatting
+        run: |
+          test -z "$(gofmt -l .)"
+
+      - name: Check whitespace
+        run: git diff --check
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Build
+        run: go build ./...
+
+      - name: Test
+        run: go test ./...
+
+      - name: Race test
+        run: go test -race ./...
+
+      - name: Check generated command docs
+        run: make docs-check
+
+      - name: Run rungrad conformance
+        run: make conformance
+
+      - name: Build binaries
+        run: make build-all VERSION=${{ github.ref_name }}
+
+      - name: Generate checksums
+        run: |
+          expected=(
+            asana-linux-amd64
+            asana-linux-arm64
+            asana-darwin-amd64
+            asana-darwin-arm64
+            asana-windows-amd64.exe
+            asana-windows-arm64.exe
+          )
+          for asset in "${expected[@]}"; do
+            test -f "dist/${asset}"
+          done
+          cd dist
+          sha256sum "${expected[@]}" > checksums.txt
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create ${{ github.ref_name }} \
+            --title "${{ github.ref_name }}" \
+            --generate-notes \
+            dist/*

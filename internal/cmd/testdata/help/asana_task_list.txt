@@ -1,0 +1,53 @@
+List tasks in a project or section.
+
+By default, lists all tasks in the project organized by section. Use --section
+to filter to a specific section. Use --assignee to filter by task owner.
+
+Tasks are shown in their section order. Output includes task GID, name, and
+completion status. Use --json for detailed output including assignee and due date.
+
+Related commands:
+  task view
+  task create
+  section list
+
+Output modes:
+  human, json, plain, jq, template
+
+Usage:
+  asana task list [flags]
+
+Examples:
+asana task list -p "My Project"
+asana task list -p "My Project" -s "In Progress"
+asana task list -p "My Project" --assignee me
+asana task list -p "My Project" --json
+asana task list -p "My Project" --limit 10
+asana task list -p "Sprint" --assignee me
+asana task view 1234567890123456
+asana task move 1234567890123456 -s "Done"
+
+Flags:
+      --assignee string        Filter by assignee (any, me, or GID) (default "any")
+  -h, --help                   help for list
+      --limit int              Limit number of tasks in output
+  -p, --project string         Project name
+      --project-gid string     Project GID
+  -s, --section string         Section name
+      --section-gid string     Section GID
+  -w, --workspace string       Workspace name (scopes project lookup)
+      --workspace-gid string   Workspace GID (scopes project lookup)
+
+Global Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)

@@ -1,0 +1,28 @@
+# Environment files with secrets
+.env
+
+# Build output (binary at root)
+/asana
+/asana-*
+/dist/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+go.work.sum
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.cache/
+.gocache/
+.gomodcache/
+.gopath/

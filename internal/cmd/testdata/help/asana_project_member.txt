@@ -1,0 +1,35 @@
+Manage project members.
+
+Project members have access to view and edit the project. Use these commands
+to list, add, or remove members.
+
+Related commands:
+  project view
+  user list
+
+Usage:
+  asana project member [command]
+
+Available Commands:
+  add         Add members to a project
+  list        List project members
+  remove      Remove members from a project
+
+Flags:
+  -h, --help   help for member
+
+Global Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)
+
+Use "asana project member [command] --help" for more information about a command.

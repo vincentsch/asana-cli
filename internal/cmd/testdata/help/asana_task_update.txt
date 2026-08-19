@@ -1,0 +1,48 @@
+Update one or more fields of a task.
+
+Supports updating name, notes, due date, and assignee. Use --clear-* flags
+to remove values. At least one field must be specified.
+
+Related commands:
+  task view
+  task move
+  task done
+
+Output modes:
+  human, json, plain, jq, template
+
+Usage:
+  asana task update <gid> [flags]
+
+Examples:
+asana task update 1234567890123456 --name "Updated title"
+asana task update 1234567890123456 --due 2024-12-31 --assignee me
+asana task update 1234567890123456 --clear-due
+asana task update 1234567890123456 --notes "New description"
+asana task update 1234567890123456 --name "New name" --dry-run
+asana task update 1234567890123456 --assignee me --due 2024-12-31
+asana task comment 1234567890123456 "Taking over this task"
+
+Flags:
+      --assignee string   Assignee (me, GID, or email)
+      --clear-assignee    Clear assignee
+      --clear-due         Clear due date
+      --clear-notes       Clear notes
+      --due string        Due date (YYYY-MM-DD or RFC3339 with timezone)
+  -h, --help              help for update
+      --name string       New task name
+      --notes string      New task notes
+
+Global Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)

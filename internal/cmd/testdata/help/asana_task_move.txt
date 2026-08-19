@@ -1,0 +1,44 @@
+Move a task to a different section within a project.
+
+This is useful for updating task status in kanban-style boards. The task
+must already belong to the project containing the target section.
+Use --dry-run to preview the move without making changes.
+
+Related commands:
+  task done
+  task update
+  section list
+
+Output modes:
+  human, json, plain, jq, template
+
+Usage:
+  asana task move <gid> [flags]
+
+Examples:
+asana task move 1234567890123456 -s "In Progress"
+asana task move 1234567890123456 --section-gid 9876543210987654
+asana task move 1234567890123456 -s "Done" --dry-run
+asana section list -p "Sprint"           # See available sections
+asana task move 1234567890123456 -s "Review"
+
+Flags:
+  -h, --help                 help for move
+  -p, --project string       Project name (required if task has multiple projects)
+      --project-gid string   Project GID
+  -s, --section string       Target section name
+      --section-gid string   Target section GID
+
+Global Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)

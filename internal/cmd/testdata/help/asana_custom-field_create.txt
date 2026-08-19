@@ -1,0 +1,43 @@
+Create a new custom field in a workspace (premium feature).
+
+Types: text, enum, multi_enum, number, date, people, reference.
+For enum/multi_enum, provide options with --enum-options.
+
+Related commands:
+  custom-field list
+  custom-field view
+
+Output modes:
+  human, json, plain, jq, template
+
+Usage:
+  asana custom-field create <name> [flags]
+
+Examples:
+asana custom-field create "Notes" -w "My Workspace" --type text
+asana custom-field create "Priority" -w "My Workspace" --type enum --enum-options "Low,Medium,High"
+asana custom-field create "Story Points" -w "My Workspace" --type number --precision 0
+asana custom-field create "Test" -w "My Workspace" --type text --dry-run
+
+Flags:
+      --description string     Field description
+      --enum-options strings   Enum option names (required for enum/multi_enum)
+  -h, --help                   help for create
+      --precision int          Decimal precision for number type
+      --type string            Field type (text, enum, multi_enum, number, date, people, reference)
+  -w, --workspace string       Workspace name
+      --workspace-gid string   Workspace GID
+
+Global Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)

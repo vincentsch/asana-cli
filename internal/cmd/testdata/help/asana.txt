@@ -1,0 +1,53 @@
+A command-line interface for Asana, inspired by GitHub's gh.
+
+Manage tasks, projects, sections, and workspaces from your terminal.
+Supports both human-readable output and JSON for automation.
+
+Quick start:
+  asana auth login              # Authenticate with your token
+  asana config set workspace "My Workspace"
+  asana task list -p "Project"  # List tasks in a project
+  asana task create "New task"  # Create a task
+
+Get a Personal Access Token at: https://app.asana.com/0/my-apps
+
+Usage:
+  asana [command]
+
+Available Commands:
+  attachment         Manage task attachments
+  auth               Manage authentication
+  completion         Generate shell completion script
+  config             Manage configuration
+  custom-field       Manage custom fields
+  goal               Manage goals
+  help               Help about any command
+  login              Log in to Asana (shortcut for 'auth login')
+  portfolio          Manage portfolios
+  project            Manage projects
+  section            Manage sections
+  tag                Manage tags
+  task               Manage tasks
+  team               Manage teams
+  update             Update asana-cli to the latest version
+  user               Manage users
+  version            Print version information
+  workspace          Manage workspaces
+
+Flags:
+      --config string     Path to the config file
+      --dry-run           Preview changes without performing them
+  -h, --help              help for asana
+      --include-meta      Wrap machine output as {data, meta} (commands that expose request metadata)
+      --jq string         Transform stable JSON output with a jq expression (commands with machine output)
+      --json              Output stable JSON instead of the human view
+      --no-ansi           Disable all ANSI/control sequences in human output
+      --no-color          Disable color in human output
+      --no-pager          Never use a pager for long human output
+      --no-prompt         Never block on an interactive prompt
+      --plain             Print unstyled, copy-safe text (commands with human output)
+      --quiet             Suppress non-essential output
+      --template string   Render stable JSON output through a Go text/template (commands with machine output)
+  -v, --version           version for asana
+
+Use "asana [command] --help" for more information about a command.
