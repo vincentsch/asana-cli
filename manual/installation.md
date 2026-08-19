@@ -1,11 +1,11 @@
 # Installation
 
-## Go Install
+## Release Installer
 
-Requires Go 1.22.2 or newer:
+macOS and Linux users can install the latest checksummed release binary with:
 
 ```bash
-go install github.com/vincentsch/asana-cli/cmd/asana@latest
+curl -fsSL https://raw.githubusercontent.com/vincentsch/asana-cli/main/install.sh | bash
 ```
 
 Verify the binary is on your `PATH`:
@@ -20,15 +20,6 @@ Expected shape:
 asana vX.Y.Z
 ```
 
-## Release Installer
-
-When GitHub release assets are available, macOS and Linux users can install the
-latest checksummed binary with:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/vincentsch/asana-cli/main/install.sh | bash
-```
-
 The script detects your platform, downloads the matching release asset, and
 verifies it against the release checksums. It installs `asana` to
 `/usr/local/bin` unless `INSTALL_DIR` is set:
@@ -36,6 +27,14 @@ verifies it against the release checksums. It installs `asana` to
 ```bash
 curl -fsSL https://raw.githubusercontent.com/vincentsch/asana-cli/main/install.sh |
   INSTALL_DIR="$HOME/.local/bin" bash
+```
+
+## Go Install
+
+Requires Go 1.22.2 or newer:
+
+```bash
+go install github.com/vincentsch/asana-cli/cmd/asana@v0.1.2
 ```
 
 ## Manual Download
