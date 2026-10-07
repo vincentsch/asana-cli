@@ -6,8 +6,8 @@ require (
 	github.com/charmbracelet/huh v0.6.0
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/pflag v1.0.9
-	github.com/vincentsch/rungrad v0.2.2
-	golang.org/x/term v0.27.0
+	github.com/vincentsch/rungrad v0.3.2
+	golang.org/x/term v0.29.0
 )
 
 require (
@@ -35,7 +35,7 @@ require (
 	github.com/muesli/termenv v0.15.3-0.20240618155329-98d742f6907a // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	golang.org/x/sync v0.8.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/text v0.18.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
