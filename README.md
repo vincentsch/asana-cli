@@ -22,7 +22,7 @@ teams, tags, attachments, custom fields, goals, and portfolios from the shell.
 - A hidden `__rungrad_manifest` command and conformance-tested CLI behavior.
 - Self-update checks with `asana update --check`.
 
-[Website](https://www.awesomecli.com/tools/asana-cli/) ·
+[Website](https://www.awesomecli.com/products/asana-cli/) ·
 [Getting started and command reference](https://www.awesomecli.com/docs/asana-cli/)
 
 ## Install
