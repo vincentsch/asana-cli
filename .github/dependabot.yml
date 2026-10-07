@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: daily
+      time: '09:20'
+      timezone: Europe/Berlin
+    open-pull-requests-limit: 3
+    groups:
+      go-patch-updates:
+        update-types: [patch]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: wednesday
+      time: '09:40'
+      timezone: Europe/Berlin
+    open-pull-requests-limit: 2

@@ -7,6 +7,7 @@ Reference documentation for the Asana CLI.
 - [Installation](installation.md) - All installation options
 - [Development](development.md) - Building from source and contributing
 - [Configuration](configuration.md) - Authentication and settings
+- [Troubleshooting](troubleshooting.md) - Installation, credentials and project lookup
 
 ## Command Reference
 
@@ -150,5 +151,13 @@ $ asana task update 123 --assignee "jane@example.com"
 $ asana section create "Done" --project "My Project"
 ```
 
-If multiple resources match a name, you'll be prompted to choose unless
-`--no-prompt` is set.
+If multiple resources match a name, the command returns an ambiguity error
+with candidate GIDs. Scope the lookup to a workspace or pass a GID explicitly:
+
+```bash
+asana task list --workspace-gid 123 --project "My Project" --json
+asana task list --project-gid 456 --json
+```
+
+Replace the example GIDs with your own. See [Troubleshooting](troubleshooting.md)
+for common setup and lookup problems.
