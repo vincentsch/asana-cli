@@ -5,7 +5,7 @@ go 1.22.2
 require (
 	github.com/charmbracelet/huh v0.6.0
 	github.com/spf13/cobra v1.10.2
-	github.com/spf13/pflag v1.0.9
+	github.com/spf13/pflag v1.0.10
 	github.com/vincentsch/rungrad v0.2.2
 	golang.org/x/term v0.27.0
 )
