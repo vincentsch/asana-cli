@@ -146,6 +146,8 @@ func exitCodeForError(err error) int {
 	var apiErr *api.APIError
 	if errors.As(err, &apiErr) {
 		switch apiErr.StatusCode {
+		case 401:
+			return rungrad.ExitAuth
 		case 403:
 			return rungrad.ExitForbidden
 		case 404:
@@ -189,7 +191,7 @@ func adaptCommandError(err error) error {
 	var apiErr *api.APIError
 	if errors.As(err, &apiErr) && apiErr.IsUnauthorized() {
 		return &rungrad.Error{
-			Code: api.ExitUsageError,
+			Code: rungrad.ExitAuth,
 			Msg:  "Invalid or expired token\nCreate a new token at: https://app.asana.com/0/my-apps",
 			Err:  err,
 		}

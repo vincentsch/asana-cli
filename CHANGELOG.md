@@ -13,6 +13,8 @@
 - Corrected installation documentation to describe only supported install paths.
 - The release installer now prints "Could not determine latest version" when the
   release lookup fails, instead of exiting without a message.
+- Invalid or expired Asana tokens now exit with code 3 (missing or invalid
+  credentials), as the rungrad exit-code spec defines, instead of code 1.
 
 ## 2026-08-09
 

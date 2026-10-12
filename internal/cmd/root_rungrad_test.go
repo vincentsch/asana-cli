@@ -485,8 +485,8 @@ func TestRungradUnauthorizedGuidanceAndRedaction(t *testing.T) {
 	commandResult13 := testutil.Run(NewApp(), "workspace", "list")
 
 	exit, _, stderr := commandResult13.Exit, commandResult13.Stdout, commandResult13.Stderr
-	if exit != 1 {
-		t.Fatalf("exit = %d, want 1; stderr = %s", exit, stderr)
+	if exit != 3 {
+		t.Fatalf("exit = %d, want 3 (missing or invalid credentials); stderr = %s", exit, stderr)
 	}
 	if !strings.Contains(stderr, "Invalid or expired token") || !strings.Contains(stderr, "Create a new token at:") {
 		t.Fatalf("stderr lacks unauthorized guidance: %s", stderr)
