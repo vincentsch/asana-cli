@@ -936,6 +936,9 @@ func runTaskCompletion(cmd *cobra.Command, gid string, completed bool, action, m
 
 func runTaskCreate(cmd *cobra.Command, args []string) error {
 	title := args[0]
+	if strings.TrimSpace(title) == "" {
+		return fmt.Errorf("task title cannot be empty")
+	}
 	projectName, _ := cmd.Flags().GetString("project")
 	projectGID, _ := cmd.Flags().GetString("project-gid")
 	sectionName, _ := cmd.Flags().GetString("section")

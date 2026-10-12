@@ -102,6 +102,11 @@ func runTaskUpdate(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("cannot use both --notes and --clear-notes")
 	}
 
+	// An explicit empty or blank --name would otherwise look like no flag at all.
+	if cmd.Flags().Changed("name") && strings.TrimSpace(name) == "" {
+		return fmt.Errorf("--name cannot be empty")
+	}
+
 	// Check at least one field
 	hasUpdate := name != "" || notes != "" || due != "" || assignee != "" || clearDue || clearAssignee || clearNotes
 	if !hasUpdate {
