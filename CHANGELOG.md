@@ -12,6 +12,8 @@
 - Updated the shared CLI foundation to
   `github.com/vincentsch/rungrad v0.2.2`.
 - Corrected installation documentation to describe only supported install paths.
+- The release installer now prints "Could not determine latest version" when the
+  release lookup fails, instead of exiting without a message.
 
 ## 2026-08-09
 

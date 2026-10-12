@@ -53,7 +53,9 @@ main() {
     platform=$(detect_platform)
     echo "Detected platform: $platform"
 
-    version=$(get_latest_version)
+    # Keep the script's own message when the lookup fails; under `set -e` a bare
+    # failed command substitution would exit silently.
+    version=$(get_latest_version || true)
     if [ -z "$version" ]; then
         echo "Could not determine latest version" >&2
         exit 1
