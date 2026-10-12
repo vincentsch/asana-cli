@@ -291,7 +291,7 @@ func runTaskDelete(cmd *cobra.Command, args []string) error {
 	return err
 }
 
-// ProjectWithWorkspace extends Project with workspace info for resolution
+// projectWithWorkspace extends Project with workspace info for resolution.
 type projectWithWorkspace struct {
 	GID          string `json:"gid"`
 	Name         string `json:"name"`

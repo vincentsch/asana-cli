@@ -116,7 +116,7 @@ See also: custom-field list`,
 	RunE: runCustomFieldDelete,
 }
 
-// Valid custom field types
+// validCustomFieldTypes lists the field types accepted by custom-field create.
 var validCustomFieldTypes = []string{
 	"text", "enum", "multi_enum", "number", "date", "people", "reference",
 }

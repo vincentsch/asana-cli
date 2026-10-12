@@ -133,7 +133,7 @@ See also: tag list, task tag add, task list`,
 	RunE: runTagTasks,
 }
 
-// Valid tag colors
+// validTagColors lists the color names accepted by validateTagColor.
 var validTagColors = []string{
 	"dark-pink", "dark-green", "dark-blue", "dark-red", "dark-teal",
 	"dark-brown", "dark-orange", "dark-purple", "dark-warm-gray",
