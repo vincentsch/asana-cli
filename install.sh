@@ -116,11 +116,11 @@ main() {
 }
 
 verify_checksum() {
-    local checksums_file asset_name binary_path expected actual
+    local checksums_file asset_name downloaded_file expected actual
 
     checksums_file="$1"
     asset_name="$2"
-    binary_path="$3"
+    downloaded_file="$3"
     expected=$(awk -v name="$asset_name" '$2 == name {print $1}' "$checksums_file")
     if [ -z "$expected" ]; then
         echo "Checksum for $asset_name not found" >&2
@@ -128,9 +128,9 @@ verify_checksum() {
     fi
 
     if command -v sha256sum >/dev/null 2>&1; then
-        actual=$(sha256sum "$binary_path" | awk '{print $1}')
+        actual=$(sha256sum "$downloaded_file" | awk '{print $1}')
     elif command -v shasum >/dev/null 2>&1; then
-        actual=$(shasum -a 256 "$binary_path" | awk '{print $1}')
+        actual=$(shasum -a 256 "$downloaded_file" | awk '{print $1}')
     else
         echo "Need sha256sum or shasum to verify the download" >&2
         exit 1
