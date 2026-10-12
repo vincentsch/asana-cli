@@ -77,6 +77,11 @@ asana config list
 | `defaults.workspace_gid` | Default workspace GID |
 | `defaults.project_gid` | Default project GID |
 
+`asana config set workspace` and `asana config set project` look up the name
+you give them and store the resolved GID in the matching `defaults` key. Their
+key names differ from the file keys, so `asana config set` takes `workspace`
+and `project`, not `defaults.workspace_gid`.
+
 ## Example Config File
 
 ```json
@@ -92,11 +97,11 @@ asana config list
 
 ## Troubleshooting
 
-### "unauthorized" errors
+### "Invalid or expired token" errors
 
 Your token may be expired or invalid. Run `asana login` again.
 
-### "workspace required" errors
+### "either --workspace or --workspace-gid is required" errors
 
 Set a default workspace:
 
