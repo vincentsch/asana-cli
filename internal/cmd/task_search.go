@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/url"
 	"strings"
+	"time"
 
 	"github.com/spf13/cobra"
 	"github.com/vincentsch/asana-cli/internal/api"
@@ -196,12 +197,10 @@ func runTaskSearch(cmd *cobra.Command, args []string) error {
 	return writeTaskListOutput(cmd, output)
 }
 
+// parseDateOnly accepts a real calendar date in YYYY-MM-DD form. A shape check
+// alone let impossible dates such as 2024-13-45 through to the API.
 func parseDateOnly(input string) (string, error) {
-	// Simple validation - expect YYYY-MM-DD
-	if len(input) != 10 {
-		return "", fmt.Errorf("invalid date format %q: use YYYY-MM-DD", input)
-	}
-	if input[4] != '-' || input[7] != '-' {
+	if _, err := time.Parse("2006-01-02", input); err != nil {
 		return "", fmt.Errorf("invalid date format %q: use YYYY-MM-DD", input)
 	}
 	return input, nil
