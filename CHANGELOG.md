@@ -7,7 +7,6 @@
   ambiguous names open a selection prompt.
 - Scheduled credential-free CI checks on Monday, Wednesday and Friday, with
   Dependabot checks for Go modules and GitHub Actions.
-
 - Prepared the repository for a fresh public source release.
 - Updated the shared CLI foundation to
   `github.com/vincentsch/rungrad v0.2.2`.
