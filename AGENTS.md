@@ -11,7 +11,7 @@ state and must not be committed to the public repo.
 ## Code Style
 
 - **File comments**: Each `.go` file should have a brief package/file comment explaining its purpose
-- **Inline comments**: Add comments for non-obvious logic, complex conditionals, and API quirks—not for self-explanatory code
+- **Inline comments**: Add comments for non-obvious logic, complex conditionals, and API quirks, not for self-explanatory code
 - Keep comments maintainable: explain *why*, not *what*
 
 ## rungrad
