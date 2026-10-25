@@ -1,21 +1,13 @@
 # asana-cli
 
-CLI for Asana inspired by GitHub's `gh`. Go + Cobra. Deterministic output for humans and automation.
+A command-line tool for Asana inspired by GitHub's `gh`, written in Go with Cobra.
 
-## Planning
+The documentation lives in the files below. Good places to start:
 
-Public contributor-facing workflow lives in `README.md`, `CONTRIBUTING.md`, and
-`manual/development.md`. Local private planning and release notes live under
-state and must not be committed to the public repo.
+- `README.md` and `manual/README.md`: what it does, installation and the user manual
+- `CONTRIBUTING.md`: how to contribute
+- `manual/development.md`: development workflow, tests and code style
+- `RELEASE.md`: how releases are made, including the pinned rungrad version
 
-## Code Style
-
-- **File comments**: Each `.go` file should have a brief package/file comment explaining its purpose
-- **Inline comments**: Add comments for non-obvious logic, complex conditionals, and API quirks, not for self-explanatory code
-- Keep comments maintainable: explain *why*, not *what*
-
-## rungrad
-
-- This CLI is built on `github.com/vincentsch/rungrad`.
-- Keep rungrad pinned to a public tagged version in `go.mod`.
-- Do not add a local filesystem `replace` for rungrad in committed files.
+This file is only a signpost, not a full guide. Please add new notes,
+decisions and rules to the docs above rather than here.
