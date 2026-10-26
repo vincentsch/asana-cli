@@ -11,6 +11,10 @@ teams, tags, attachments, custom fields, goals, and portfolios from the shell.
 
 `asana-cli` is not affiliated with, endorsed by, or sponsored by Asana, Inc.
 
+[Documentation](https://www.awesomecli.com/docs/asana-cli/) ·
+[Use with a coding agent](https://www.awesomecli.com/docs/asana-cli/agents/) ·
+[Website](https://www.awesomecli.com/products/asana-cli/)
+
 ## What It Provides
 
 - Text tables by default and stable `--json` for automation.
@@ -21,9 +25,6 @@ teams, tags, attachments, custom fields, goals, and portfolios from the shell.
 - Name-to-GID resolution with deterministic non-interactive errors.
 - A hidden `__rungrad_manifest` command and conformance-tested CLI behavior.
 - Self-update checks with `asana update --check`.
-
-[Website](https://www.awesomecli.com/products/asana-cli/) ·
-[Getting started and command reference](https://www.awesomecli.com/docs/asana-cli/)
 
 ## Install
 
@@ -127,10 +128,15 @@ include credentials.
 
 ## Command Reference
 
+The [documentation on awesomecli.com](https://www.awesomecli.com/docs/asana-cli/)
+shows this manual as a website. It also explains how to use the CLI with a
+coding agent.
+
 - [Complete command index](manual/commands/index.md)
 - [Authentication](manual/commands/auth.md)
 - [Configuration](manual/configuration.md)
 - [Installation](manual/installation.md)
+- [Troubleshooting](manual/troubleshooting.md)
 - [Development](manual/development.md)
 
 Generated command pages live under [`manual/commands/`](manual/commands/).
