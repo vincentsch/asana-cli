@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Help and the generated manual no longer repeat an example command when a
+  workflow example starts with an earlier example. Eleven commands were
+  affected, including `task comment` and `workspace list`.
 - Added troubleshooting for PATH, environment token overrides, ambiguous
   project names and premium task search. Corrected the manual's claim that
   ambiguous names open a selection prompt.

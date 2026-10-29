@@ -13,7 +13,6 @@ Usage:
 Examples:
 asana task dependency remove 1234567890123456 --depends-on 9876543210987654 --confirm
 asana task dependency list 1234567890123456
-asana task dependency remove 1234567890123456 --depends-on 9876543210987654 --confirm
 asana task comment 1234567890123456 "Unblocked - dependency resolved"
 
 Flags:

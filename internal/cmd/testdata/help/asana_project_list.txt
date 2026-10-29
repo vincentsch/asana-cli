@@ -19,7 +19,6 @@ asana project list -w "My Workspace"
 asana project list -w "My Workspace" -t "Engineering"
 asana project list -w "My Workspace" --limit 10
 asana project list -w "My Workspace" --json
-asana project list -w "My Workspace"
 asana task list -p "My Project"
 
 Flags:

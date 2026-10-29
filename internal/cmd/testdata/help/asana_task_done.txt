@@ -17,7 +17,6 @@ Examples:
 asana task done 1234567890123456
 asana task done 1234567890123456 --dry-run
 asana task comment 1234567890123456 "Completed - deployed to staging"
-asana task done 1234567890123456
 
 Flags:
   -h, --help   help for done

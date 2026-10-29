@@ -155,6 +155,19 @@ func TestDestructiveCommandExamplesAreSafe(t *testing.T) {
 	}
 }
 
+func TestCommandExamplesAreNotRepeated(t *testing.T) {
+	document := testutil.CaptureManifest(t, NewApp())
+	for _, command := range document.Commands {
+		seen := map[string]bool{}
+		for _, example := range command.Examples {
+			if seen[example] {
+				t.Errorf("command %q repeats example %q", strings.Join(command.Path, " "), example)
+			}
+			seen[example] = true
+		}
+	}
+}
+
 func TestManifestEndpointIsHiddenFromPublicDiscovery(t *testing.T) {
 	t.Setenv("XDG_CONFIG_HOME", t.TempDir())
 	t.Setenv("ASANA_TOKEN", "")

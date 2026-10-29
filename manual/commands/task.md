@@ -30,7 +30,6 @@ asana task comment <task-gid> <message>
 asana task comment 1234567890123456 "Looking into this now"
 printf 'Line 1\nLine 2\n' | asana task comment 1234567890123456 -
 asana task view 1234567890123456
-asana task view 1234567890123456
 asana task comment 1234567890123456 "Fixed in commit abc123"
 asana task done 1234567890123456
 ```
@@ -272,7 +271,6 @@ asana task dependency add <gid>
 ```
 asana task dependency add 1234567890123456 --depends-on 9876543210987654
 asana task dependency add 1234567890123456 --depends-on 111,222,333
-asana task dependency add 1234567890123456 --depends-on 9876543210987654
 asana task comment 1234567890123456 "Blocked by design review"
 ```
 
@@ -354,7 +352,6 @@ asana task dependency remove <gid>
 ```
 asana task dependency remove 1234567890123456 --depends-on 9876543210987654 --confirm
 asana task dependency list 1234567890123456
-asana task dependency remove 1234567890123456 --depends-on 9876543210987654 --confirm
 asana task comment 1234567890123456 "Unblocked - dependency resolved"
 ```
 
@@ -545,7 +542,6 @@ asana task done <gid>
 asana task done 1234567890123456
 asana task done 1234567890123456 --dry-run
 asana task comment 1234567890123456 "Completed - deployed to staging"
-asana task done 1234567890123456
 ```
 
 ### Output modes
@@ -1022,7 +1018,6 @@ asana task reopen <gid>
 ```
 asana task reopen 1234567890123456
 asana task reopen 1234567890123456 --dry-run
-asana task reopen 1234567890123456
 asana task move 1234567890123456 -s "In Progress"
 ```
 
@@ -1231,7 +1226,6 @@ asana task tag add <gid>
 ```
 asana task tag add 1234567890123456 --tag "urgent" -w "My Workspace"
 asana task tag add 1234567890123456 --tag-gid 9876543210987654
-asana task tag add 1234567890123456 --tag "urgent" -w "My Workspace"
 asana task tag add 1234567890123456 --tag "bug" -w "My Workspace"
 ```
 

@@ -15,13 +15,18 @@ type asanaCommandModule struct {
 	specs    []rungrad.CommandSpec
 }
 
+// normalizeExamples drops comments and repeated commands. Without the
+// comments, a workflow example that starts with an earlier example would
+// otherwise show the same command twice in help and the manual.
 func normalizeExamples(value string) []string {
 	var examples []string
+	seen := map[string]bool{}
 	for _, line := range strings.Split(value, "\n") {
 		line = strings.TrimSpace(line)
-		if line == "" || strings.HasPrefix(line, "#") {
+		if line == "" || strings.HasPrefix(line, "#") || seen[line] {
 			continue
 		}
+		seen[line] = true
 		examples = append(examples, line)
 	}
 	return examples

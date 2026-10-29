@@ -31,7 +31,6 @@ asana section create "In Progress" -p "My Project"
 asana section create "Review" -p "My Project" --insert-after "In Progress"
 asana section create "Test" -p "My Project" --dry-run
 asana section create "Backlog" -p "My Project"
-asana section create "In Progress" -p "My Project"
 asana section create "Review" -p "My Project"
 asana section create "Done" -p "My Project"
 ```
@@ -129,7 +128,6 @@ asana section list
 asana section list -p "My Project"
 asana section list -p "My Project" --limit 5
 asana section list -p "My Project" --json
-asana section list -p "My Project"
 asana task list -p "My Project" -s "In Progress"
 ```
 

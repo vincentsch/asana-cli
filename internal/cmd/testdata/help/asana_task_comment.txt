@@ -20,7 +20,6 @@ Examples:
 asana task comment 1234567890123456 "Looking into this now"
 printf 'Line 1\nLine 2\n' | asana task comment 1234567890123456 -
 asana task view 1234567890123456
-asana task view 1234567890123456
 asana task comment 1234567890123456 "Fixed in commit abc123"
 asana task done 1234567890123456
 

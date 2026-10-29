@@ -16,7 +16,6 @@ Usage:
 Examples:
 asana project view 1234567890123456
 asana project view 1234567890123456 --json
-asana project view 1234567890123456
 asana section list --project-gid 1234567890123456
 asana task list --project-gid 1234567890123456
 

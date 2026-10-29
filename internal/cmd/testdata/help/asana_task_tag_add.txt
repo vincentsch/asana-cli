@@ -14,7 +14,6 @@ Usage:
 Examples:
 asana task tag add 1234567890123456 --tag "urgent" -w "My Workspace"
 asana task tag add 1234567890123456 --tag-gid 9876543210987654
-asana task tag add 1234567890123456 --tag "urgent" -w "My Workspace"
 asana task tag add 1234567890123456 --tag "bug" -w "My Workspace"
 
 Flags:

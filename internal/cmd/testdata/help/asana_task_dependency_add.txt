@@ -13,7 +13,6 @@ Usage:
 Examples:
 asana task dependency add 1234567890123456 --depends-on 9876543210987654
 asana task dependency add 1234567890123456 --depends-on 111,222,333
-asana task dependency add 1234567890123456 --depends-on 9876543210987654
 asana task comment 1234567890123456 "Blocked by design review"
 
 Flags:

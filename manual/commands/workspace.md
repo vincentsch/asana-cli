@@ -29,7 +29,6 @@ asana workspace list
 ```
 asana workspace list
 asana workspace list --json
-asana workspace list
 asana config set workspace "My Workspace"
 ```
 

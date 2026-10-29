@@ -185,7 +185,6 @@ asana project list -w "My Workspace"
 asana project list -w "My Workspace" -t "Engineering"
 asana project list -w "My Workspace" --limit 10
 asana project list -w "My Workspace" --json
-asana project list -w "My Workspace"
 asana task list -p "My Project"
 ```
 
@@ -424,7 +423,6 @@ asana project view <project-gid>
 ```
 asana project view 1234567890123456
 asana project view 1234567890123456 --json
-asana project view 1234567890123456
 asana section list --project-gid 1234567890123456
 asana task list --project-gid 1234567890123456
 ```

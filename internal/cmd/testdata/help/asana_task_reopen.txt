@@ -17,7 +17,6 @@ Usage:
 Examples:
 asana task reopen 1234567890123456
 asana task reopen 1234567890123456 --dry-run
-asana task reopen 1234567890123456
 asana task move 1234567890123456 -s "In Progress"
 
 Flags:
